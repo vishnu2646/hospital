@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Here is the Doctor List!...</h2>
+    <br>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">Position</th>
+            <th scope="col">Spelization</th>
+            <th scope="col">Qualification</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+          <tr>
+            <th scope="row">DR.{{ doctor.name }}</th>
+            <td>{{ doctor.position }}</td>
+            <td>{{ doctor.spelization }}</td>
+            <td>{{ doctor.qualification }}</td>
+            <td><a href="" class="btn btn-warning">Call</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Here is the Appoinment List!...</h2>
+    <br>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">NAME</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Reason</th>
+            <th scope="col">Date of Appoinment</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for appoinment in appoinments %}
+          <tr>
+            <th scope="row">MR/Ms.{{ appoinment.name }}</th>
+            <td>{{ appoinment.age }}</td>
+            <td>{{ appoinment.gender }}</td>
+            <td>{{ appoinment.reason }}</td>
+            <td>{{ appoinment.date }}</td>
+            <td>{{ appoinment.phone }}</td>
+            <td><a href="/send/" class="btn btn-success">Accept</a> <a href="/delete/{{appoinment.id}}" class="btn btn-danger">Reject</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}

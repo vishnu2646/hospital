@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center">Here is the Admission List!...</h2>
+  <table class="table table-hover">
+    <br>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Reason</th>
+        <th scope="col">Date</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for admission in admissions %}
+      <tr>
+        <th scope="row">Mr/Ms.{{ admission.name }}</th>
+        <td>{{ admission.age }}</td>
+        <td>{{ admission.gender }}</td>
+        <td>{{ admission.reason }}</td>
+        <td>{{ admission.date }}</td>
+        <td>{{ admission.phone }}</td>
+        <td><a href="tel:6369031601" class="btn btn-warning">Call</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

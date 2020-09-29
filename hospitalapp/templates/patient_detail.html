@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h3 class="text-center">Here is the Patient Reports!...</h3>
+    <a class="btn btn-success mt-1 mb-1 float-right" href="#">Add Record</a>
+    <br>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="patient-name">{{ object.date|date:'F d, Y' }}</h3>
+                <p class="details">{{ object.report }}</p>
+                <a class="btn btn-warning mt-1 mb-1 float-right" href="{% url 'patient-update' object.id %}">Update</a>
+            </div>
+        </div>
+    </div>
+    {% for report in reports %}
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <p class="new">{{ report.newreport }}</p>
+            </div>
+        </div>
+    </div>
+</div>                 
+{% endfor %}
+{% endblock %}
